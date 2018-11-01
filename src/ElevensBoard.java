@@ -132,30 +132,17 @@ public class ElevensBoard extends Board {
 		if(selectedCards.size() < 3)
 			return false; 
 		
-		for(int i = 0; i <= selectedCards.size()-2; i++) {
-			for(int j = i+1; j <= selectedCards.size()-1; j++ ) {
-				for(int k = i+2;k <= selectedCards.size(); k++) {
-						if((this.cardAt(k).rank().equals("king")) ||
-							(this.cardAt(j).rank().equals("king")) ||
-							(this.cardAt(i).rank().equals("king"))){
-								foundK = true;	
-						
-						}
+		for(int k = 0; k <= selectedCards.size(); k++) {
+					if((this.cardAt(k).rank().equals("king"))) 
+								foundK = true;
 					
-					else if((this.cardAt(k).rank().equals("queen")) ||
-							(this.cardAt(j).rank().equals("queen")) ||
-							(this.cardAt(i).rank().equals("queen"))){
+					if((this.cardAt(k).rank().equals("queen"))) 
 								foundQ = true;	
-							
 					
-					}
-					
-					else if((this.cardAt(k).rank().equals("jack")) ||
-							(this.cardAt(j).rank().equals("jack")) ||
-							(this.cardAt(i).rank().equals("jack"))){
+					else if((this.cardAt(k).rank().equals("jack"))) 
 								foundJ = true;		
 							
-			}
+			
 		}
 		
 		
@@ -163,4 +150,5 @@ public class ElevensBoard extends Board {
 		
 		return foundK && foundQ && foundJ;
 	}
+
 }
