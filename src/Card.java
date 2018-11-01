@@ -1,3 +1,5 @@
+import javax.print.attribute.standard.MediaSize.Other;
+
 /**
  * Card.java
  *
@@ -33,6 +35,10 @@ public class Card {
 	 */
 	public Card(String cardRank, String cardSuit, int cardPointValue) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+		this.rank = cardRank;
+		this.suit = cardSuit;
+		this.pointValue = cardPointValue;
+		
 	}
 
 	/**
@@ -41,6 +47,7 @@ public class Card {
 	 */
 	public String suit() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+		return this.suit;
    }
 
 	/**
@@ -49,6 +56,7 @@ public class Card {
 	 */
 	public String rank() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+		return this.rank;
 	}
 
    /**
@@ -57,6 +65,7 @@ public class Card {
 	 */
 	public int pointValue() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+		return this.pointValue;
 	}
 
 	/** Compare this card with the argument.
@@ -67,6 +76,8 @@ public class Card {
 	 */
 	public boolean matches(Card otherCard) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+		return this.suit.equals(otherCard.suit) &&
+				this.rank.equals(otherCard.rank);
 	}
 	/**
 	 * Converts the rank, suit, and point value into a string in the format
@@ -80,6 +91,6 @@ public class Card {
 	 */
 	@Override
 	public String toString() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+		return this.rank + " of" + this.suit + " (point value = " + this.pointValue + " )";
 	}
 }
